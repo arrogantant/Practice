@@ -13,3 +13,18 @@ C:\Users\com\source\repos\ConsoleApp4\obj\Debug\net6.0\refint\ConsoleApp4.dll
 C:\Users\com\source\repos\ConsoleApp4\obj\Debug\net6.0\ConsoleApp4.pdb
 C:\Users\com\source\repos\ConsoleApp4\obj\Debug\net6.0\ConsoleApp4.genruntimeconfig.cache
 C:\Users\com\source\repos\ConsoleApp4\obj\Debug\net6.0\ref\ConsoleApp4.dll
+C:\Users\com\source\repos\textRPG Choosing a Job\bin\Debug\net6.0\ConsoleApp4.exe
+C:\Users\com\source\repos\textRPG Choosing a Job\bin\Debug\net6.0\ConsoleApp4.deps.json
+C:\Users\com\source\repos\textRPG Choosing a Job\bin\Debug\net6.0\ConsoleApp4.runtimeconfig.json
+C:\Users\com\source\repos\textRPG Choosing a Job\bin\Debug\net6.0\ConsoleApp4.dll
+C:\Users\com\source\repos\textRPG Choosing a Job\bin\Debug\net6.0\ConsoleApp4.pdb
+C:\Users\com\source\repos\textRPG Choosing a Job\obj\Debug\net6.0\ConsoleApp4.csproj.AssemblyReference.cache
+C:\Users\com\source\repos\textRPG Choosing a Job\obj\Debug\net6.0\ConsoleApp4.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\com\source\repos\textRPG Choosing a Job\obj\Debug\net6.0\ConsoleApp4.AssemblyInfoInputs.cache
+C:\Users\com\source\repos\textRPG Choosing a Job\obj\Debug\net6.0\ConsoleApp4.AssemblyInfo.cs
+C:\Users\com\source\repos\textRPG Choosing a Job\obj\Debug\net6.0\ConsoleApp4.csproj.CoreCompileInputs.cache
+C:\Users\com\source\repos\textRPG Choosing a Job\obj\Debug\net6.0\ConsoleApp4.dll
+C:\Users\com\source\repos\textRPG Choosing a Job\obj\Debug\net6.0\refint\ConsoleApp4.dll
+C:\Users\com\source\repos\textRPG Choosing a Job\obj\Debug\net6.0\ConsoleApp4.pdb
+C:\Users\com\source\repos\textRPG Choosing a Job\obj\Debug\net6.0\ConsoleApp4.genruntimeconfig.cache
+C:\Users\com\source\repos\textRPG Choosing a Job\obj\Debug\net6.0\ref\ConsoleApp4.dll

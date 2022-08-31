@@ -14,6 +14,13 @@ namespace CSharp
             cat = 4,
         }
 
+        struct Player
+        {
+            public int hp;
+            public int attack;
+            
+        }
+
         static ClassType ChooseClass()
         {
             Console.WriteLine("직업을 선택하세여");
@@ -45,16 +52,52 @@ namespace CSharp
             return choice;
         }
 
+        
+
+        static void CreatePlayer(ClassType choice, out Player player)
+        {
+            
+            switch (choice)
+            {
+                case ClassType.knight:
+                    player.hp = 100;
+                    player.attack = 10;
+                    break;
+                case ClassType.Mage:
+                    player.hp = 80;
+                    player.attack = 8;
+                    break;
+                case ClassType.Ardher:
+                    player.hp = 60;
+                    player.attack = 12;
+                    break;
+                case ClassType.cat:
+                    player.hp = 1000;
+                    player.attack = 1000;
+                    break;
+                default:
+                    player.hp = 0;
+                    player.attack = 0;
+                    break;
+            }
+        }
+
             static void Main(string[] args)
             {
-
 
                 while (true)
                 {
 
                     ClassType choice = ChooseClass();
                     if (choice != ClassType.None)
-                        break;
+                {
+                    Player player;
+
+                    CreatePlayer(choice, out player);
+
+                    Console.WriteLine($"HP{player.hp} Attack{player.attack}");
+                }
+                    
 
                 }
             }
