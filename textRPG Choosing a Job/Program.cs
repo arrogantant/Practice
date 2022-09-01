@@ -21,6 +21,14 @@ namespace CSharp
             
         }
 
+        enum MonsterType
+        {
+            None = 0,
+            Slime = 1,
+            Orc = 2,
+            Skeleton = 3
+        }
+
         static ClassType ChooseClass()
         {
             Console.WriteLine("직업을 선택하세여");
@@ -82,6 +90,63 @@ namespace CSharp
             }
         }
 
+        static void CreateRandomMonster(out MonsterType monster)
+        {
+            Random rand = new Random();
+            rand.NextMonster(1, 4);
+            switch(randMonster)
+            {
+                case (int)MonsterType.Sliime:
+                    Console.WriteLine("슬라임 스폰");
+                    monster.hp = 20;
+                    monster.attack = 2;
+                    break;
+                case (int)MonsterType.Orc:
+                    Console.WriteLine("오크 소환");
+                    monster.hp = 40;
+                    monster.attack = 3;
+                    break;
+                case (int)MonsterType.Skeleton:
+                    Console.WriteLine("스켈레톤 소환");
+                    monster.hp = 50;
+                    monster.attack = 12;
+                    break;
+            }
+        }
+        static void EnterField()
+        {
+            Console.WriteLine("필드에 접속했습니다!");
+
+            //몬스터
+            Monster monster;
+            CreateRandomMonster(out monster);
+
+            Console.WriteLine("[1] 전투모드");
+            Console.WriteLine("[2] 일정 확률로 마을로 도망");
+        }
+        static void EnterGame()
+        {
+            while(true)
+            {
+                Console.WriteLine("게임에 접속했습니다!");
+                Console.WriteLine("[1] 필드로간다");
+                Console.WriteLine("[2] 로비로 돌아가기");
+
+                string input = Console.ReadLine();
+                if (input == "1")
+                {
+
+                }
+                else if (input == "2")
+                {
+                    break;
+                }
+                
+                
+                }
+            }
+            
+        }
             static void Main(string[] args)
             {
 
@@ -95,7 +160,7 @@ namespace CSharp
 
                     CreatePlayer(choice, out player);
 
-                    Console.WriteLine($"HP{player.hp} Attack{player.attack}");
+                    EnterGame();
                 }
                     
 
