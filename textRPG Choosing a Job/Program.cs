@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 using System.Xml.Serialization;
 
 namespace CSharp
@@ -18,7 +19,7 @@ namespace CSharp
         {
             public int hp;
             public int attack;
-            
+
         }
 
         enum MonsterType
@@ -27,6 +28,13 @@ namespace CSharp
             Slime = 1,
             Orc = 2,
             Skeleton = 3
+        }
+    
+
+        struct Monster
+        {
+            public int hp;
+            public int attack;
         }
 
         static ClassType ChooseClass()
@@ -60,11 +68,11 @@ namespace CSharp
             return choice;
         }
 
-        
+
 
         static void CreatePlayer(ClassType choice, out Player player)
         {
-            
+
             switch (choice)
             {
                 case ClassType.knight:
@@ -90,27 +98,32 @@ namespace CSharp
             }
         }
 
-        static void CreateRandomMonster(out MonsterType monster)
+        static void CreateRandomMonster(out Monster monster)
         {
             Random rand = new Random();
-            rand.NextMonster(1, 4);
-            switch(randMonster)
+            int randMonster = rand.Next(1, 4);
+            switch (randMonster)
             {
-                case (int)MonsterType.Sliime:
+                case (int)MonsterType.Slime:
                     Console.WriteLine("슬라임 스폰");
-                    monster.hp = 20;
+                    monster.hp = 2;
                     monster.attack = 2;
                     break;
                 case (int)MonsterType.Orc:
                     Console.WriteLine("오크 소환");
                     monster.hp = 40;
-                    monster.attack = 3;
+                    monster.attack = 4;
                     break;
                 case (int)MonsterType.Skeleton:
                     Console.WriteLine("스켈레톤 소환");
                     monster.hp = 50;
                     monster.attack = 12;
                     break;
+                default:
+                    monster.hp = 0;
+                    monster.attack = 0;
+                    break;
+
             }
         }
         static void EnterField()
@@ -126,7 +139,7 @@ namespace CSharp
         }
         static void EnterGame()
         {
-            while(true)
+            while (true)
             {
                 Console.WriteLine("게임에 접속했습니다!");
                 Console.WriteLine("[1] 필드로간다");
@@ -135,26 +148,23 @@ namespace CSharp
                 string input = Console.ReadLine();
                 if (input == "1")
                 {
-
+                    EnterField();
                 }
                 else if (input == "2")
                 {
                     break;
                 }
-                
-                
-                }
             }
-            
         }
-            static void Main(string[] args)
+
+        static void Main(string[] args)
+        {
+
+            while (true)
             {
 
-                while (true)
-                {
-
-                    ClassType choice = ChooseClass();
-                    if (choice != ClassType.None)
+                ClassType choice = ChooseClass();
+                if (choice != ClassType.None)
                 {
                     Player player;
 
@@ -162,9 +172,11 @@ namespace CSharp
 
                     EnterGame();
                 }
-                    
-
-                }
             }
         }
     }
+}
+
+
+          
+    
