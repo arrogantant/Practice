@@ -126,18 +126,61 @@ namespace CSharp
 
             }
         }
-        static void EnterField()
+        static void Fight(ref Player player , ref Monster monster)
         {
-            Console.WriteLine("필드에 접속했습니다!");
+            while(true)
+            {
+                monster.hp -= player.attack;
+                if(monster.hp <= 0)
+                {
+                    Console.WriteLine("승리");
+                    Console.WriteLine($"남은체력 : {player.hp}");
+                    break;
+                }
 
-            //몬스터
-            Monster monster;
-            CreateRandomMonster(out monster);
-
-            Console.WriteLine("[1] 전투모드");
-            Console.WriteLine("[2] 일정 확률로 마을로 도망");
+                player.hp -= monster.attack;
+                if(player.hp <= 0)
+                {
+                    Console.WriteLine("패배");
+                    break;
+                }
+            }
         }
-        static void EnterGame()
+        static void EnterField(ref Player player)
+        {
+            while (true)
+            {
+                Console.WriteLine("필드에 접속했습니다!");
+
+                //몬스터
+                Monster monster;
+                CreateRandomMonster(out monster);
+
+                Console.WriteLine("[1] 전투모드");
+                Console.WriteLine("[2] 일정 확률로 마을로 도망");
+
+                string input = Console.ReadLine();
+                if (input == "1")
+                {
+                    Fight (ref player, ref monster);
+                }
+                else if (input == "2")
+                {
+                    Random rand = new Random();
+                    int randValue = rand.Next(0, 101);
+                    if(randValue <=33)
+                    {
+                        Console.WriteLine("도망 성공");
+                        break;
+                    }
+                    else
+                    {
+                        Fight(ref player, ref monster);
+                    }
+                }
+            }
+        }
+        static void EnterGame(ref Player player)
         {
             while (true)
             {
@@ -148,7 +191,7 @@ namespace CSharp
                 string input = Console.ReadLine();
                 if (input == "1")
                 {
-                    EnterField();
+                    EnterField(ref player);
                 }
                 else if (input == "2")
                 {
@@ -170,7 +213,7 @@ namespace CSharp
 
                     CreatePlayer(choice, out player);
 
-                    EnterGame();
+                    EnterGame(ref player);
                 }
             }
         }
