@@ -5,24 +5,39 @@ using UnityEngine;
 
 public class Hand : MonoBehaviour
 {
+    public AudioClip one;
+
+    Animator anim;
+    AudioSource audioSource;
     
-    // Start is called before the first frame update
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
+
+
         if (Input.GetKeyDown(KeyCode.Z))
         {
             transform.DOLocalMoveY(1f, 0.1f).SetLoops(1, LoopType.Restart);
+            anim.SetBool("on", true);
+            audioSource.clip = one;
+            audioSource.Play();
         }
 
         if (Input.GetKeyUp(KeyCode.Z))
         {
             transform.DOLocalMoveY(2, 0.1f).SetLoops(1, LoopType.Restart);
+            anim.SetBool("on", false);
+
         }
+
+        
     }
 }

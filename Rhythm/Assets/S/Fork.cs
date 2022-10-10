@@ -9,6 +9,14 @@ public class Fork : MonoBehaviour
     public GameObject Shadow;
     public GameObject stabfx;
     public GameObject shadow;
+
+    
+
+    private void Start()
+    {
+        
+        
+    }
     private void Update()
     {
         
@@ -19,6 +27,8 @@ public class Fork : MonoBehaviour
                 Shadow.SetActive(true);
                 stabfx.SetActive(true);
                 shadow.transform.DOScale(new Vector3(1.6f, 1.6f, 1.6f), 0.1f);
+                
+
             }
        
 
@@ -28,8 +38,9 @@ public class Fork : MonoBehaviour
                 Shadow.SetActive(false);
                 stabfx.SetActive(false);
                 shadow.transform.DOScale(new Vector3(1.4f, 1.2f, 1.2f), 0.1f);
+                
 
-        }
+            }
         
         
     }
